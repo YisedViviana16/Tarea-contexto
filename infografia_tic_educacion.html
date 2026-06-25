@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIC en la Sociedad del Conocimiento – Infografía</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+  }
+
+  .infografia {
+    width: 700px;
+    background: #f0f2f5;
+    padding-bottom: 2rem;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #1a3a5c 0%, #0f6e56 100%);
+    border-radius: 16px;
+    padding: 2rem 2rem 1.5rem 2rem;
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: 30px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9FE1CB;
+    margin-bottom: 0.5rem;
+  }
+  .hero-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+
+  .central-idea {
+    background: #E1F5EE;
+    border-left: 4px solid #0f6e56;
+    border-radius: 0 10px 10px 0;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 13px;
+    color: #085041;
+    line-height: 1.6;
+  }
+  .central-idea strong {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0f6e56;
+    margin-bottom: 0.3rem;
+  }
+
+  .section-card {
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 0.5px solid rgba(0,0,0,0.08);
+    background: #fff;
+  }
+
+  .section-header {
+    padding: 0.75rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .section-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .section-question {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    margin-top: 1px;
+    line-height: 1.3;
+  }
+
+  .section-body {
+    padding: 0.9rem 1.1rem 1rem 1.1rem;
+    background: #fff;
+  }
+
+  /* SECCIÓN 1 */
+  .s1 .section-header { background: #1a3a5c; }
+  .orgs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  .org-card {
+    border-radius: 8px;
+    padding: 0.7rem 0.8rem;
+    border: 0.5px solid rgba(0,0,0,0.07);
+  }
+  .org-card-header {
+    display: flex; align-items: center; gap: 0.4rem;
+    margin-bottom: 0.35rem;
+  }
+  .org-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .org-name { font-size: 12px; font-weight: 700; line-height: 1.1; }
+  .org-desc { font-size: 11.5px; color: #555; line-height: 1.5; }
+
+  .org-cmsi { background: #E6F1FB; }
+  .org-cmsi .org-dot { background: #185FA5; }
+  .org-cmsi .org-name { color: #0C447C; }
+
+  .org-unesco { background: #EEEDFE; }
+  .org-unesco .org-dot { background: #534AB7; }
+  .org-unesco .org-name { color: #3C3489; }
+
+  .org-agenda { background: #FAEEDA; }
+  .org-agenda .org-dot { background: #BA7517; }
+  .org-agenda .org-name { color: #633806; }
+
+  .org-ods { background: #EAF3DE; }
+  .org-ods .org-dot { background: #3B6D11; }
+  .org-ods .org-name { color: #27500A; }
+
+  /* SECCIÓN 2 */
+  .s2 .section-header { background: #0f6e56; }
+  .context-flow { display: flex; flex-direction: column; gap: 0.5rem; }
+  .flow-item {
+    display: flex; gap: 0.7rem; align-items: flex-start;
+    padding: 0.65rem 0.8rem;
+    border-radius: 8px;
+    background: #f7fdf9;
+    border-left: 3px solid #1D9E75;
+  }
+  .flow-icon { font-size: 18px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+  .flow-text { font-size: 12.5px; color: #1a1a1a; line-height: 1.5; }
+  .flow-text strong { color: #085041; font-weight: 600; }
+
+  /* SECCIÓN 3 */
+  .s3 .section-header { background: #6B3FA0; }
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+  .role-card { border-radius: 8px; padding: 0.75rem 0.85rem; text-align: center; }
+  .role-icon { font-size: 24px; margin-bottom: 0.3rem; line-height: 1; }
+  .role-name { font-size: 12px; font-weight: 700; margin-bottom: 0.25rem; line-height: 1.2; }
+  .role-desc { font-size: 11px; line-height: 1.45; }
+
+  .r-pedagogico { background: #EEEDFE; }
+  .r-pedagogico .role-name { color: #3C3489; }
+  .r-pedagogico .role-desc { color: #534AB7; }
+
+  .r-inclusion { background: #E1F5EE; }
+  .r-inclusion .role-name { color: #085041; }
+  .r-inclusion .role-desc { color: #0f6e56; }
+
+  .r-objeto { background: #FAEEDA; }
+  .r-objeto .role-name { color: #633806; }
+  .r-objeto .role-desc { color: #854F0B; }
+
+  .r-motor { background: #FAECE7; }
+  .r-motor .role-name { color: #4A1B0C; }
+  .r-motor .role-desc { color: #993C1D; }
+
+  /* SECCIÓN 4 */
+  .s4 .section-header { background: #B5341C; }
+  .dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+  .col-desafios { background: #FCEBEB; border-radius: 8px; padding: 0.75rem 0.85rem; }
+  .col-oportunidades { background: #EAF3DE; border-radius: 8px; padding: 0.75rem 0.85rem; }
+
+  .col-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.3rem;
+  }
+  .col-desafios .col-label { color: #A32D2D; }
+  .col-oportunidades .col-label { color: #3B6D11; }
+
+  .mini-item {
+    font-size: 11.5px; line-height: 1.5;
+    margin-bottom: 0.25rem;
+    padding-left: 0.7rem;
+    position: relative;
+  }
+  .mini-item::before { content: '▸'; position: absolute; left: 0; font-size: 9px; top: 2px; }
+  .col-desafios .mini-item { color: #711F1F; }
+  .col-desafios .mini-item::before { color: #E24B4A; }
+  .col-oportunidades .mini-item { color: #27500A; }
+  .col-oportunidades .mini-item::before { color: #639922; }
+
+  .clave-box {
+    background: #1a3a5c;
+    border-radius: 8px; padding: 0.7rem 1rem;
+    margin-top: 0.75rem;
+    font-size: 12.5px; color: #fff;
+    text-align: center; line-height: 1.5;
+  }
+  .clave-box strong { color: #9FE1CB; }
+
+  /* REFLEXIÓN */
+  .reflexion {
+    background: linear-gradient(135deg, #1a3a5c, #6B3FA0);
+    border-radius: 12px; padding: 1.1rem 1.2rem; margin-top: 1rem;
+  }
+  .reflexion-label {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: #9FE1CB; font-weight: 700; margin-bottom: 0.4rem;
+  }
+  .reflexion-text { font-size: 12.5px; color: rgba(255,255,255,0.88); line-height: 1.65; }
+  .reflexion-text em { color: #CECBF6; font-style: normal; font-weight: 600; }
+
+  .fuentes {
+    font-size: 10px; color: #888; text-align: center;
+    margin-top: 0.75rem; line-height: 1.6;
+  }
+
+  /* BOTÓN IMPRIMIR */
+  .print-btn {
+    display: block; width: 100%;
+    margin-bottom: 1.25rem;
+    padding: 0.6rem;
+    background: #1a3a5c; color: #fff;
+    border: none; border-radius: 8px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .print-btn:hover { background: #0f2840; }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .infografia { width: 100%; }
+    .print-btn { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="infografia">
+
+  <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+
+  <div class="hero">
+    <div class="hero-label">Unidad 2 · TIC y Educación</div>
+    <div class="hero-title">TIC en la sociedad del conocimiento</div>
+    <div class="hero-sub">Lineamientos mundiales, política pública y contexto educativo</div>
+  </div>
+
+  <div class="central-idea">
+    <strong>Idea central</strong>
+    Las TIC no son solo herramientas técnicas; son mediaciones pedagógicas, culturales y políticas que amplían el acceso, fortalecen la calidad educativa y reducen brechas, cuando se integran con propósito, formación docente e inclusión.
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="section-card s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div>
+        <div class="section-title">Lineamientos mundiales</div>
+        <div class="section-question">¿Qué orientaciones globales guían la integración de las TIC en educación?</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="orgs-grid">
+        <div class="org-card org-cmsi">
+          <div class="org-card-header">
+            <div class="org-dot"></div>
+            <div class="org-name">CMSI / ONU</div>
+          </div>
+          <div class="org-desc">Inclusión digital, acceso equitativo, reducción de brechas y uso social de las TIC.</div>
+        </div>
+        <div class="org-card org-unesco">
+          <div class="org-card-header">
+            <div class="org-dot"></div>
+            <div class="org-name">UNESCO</div>
+          </div>
+          <div class="org-desc">Integración pedagógica, competencias digitales, REA y aprendizaje a lo largo de la vida.</div>
+        </div>
+        <div class="org-card org-agenda">
+          <div class="org-card-header">
+            <div class="org-dot"></div>
+            <div class="org-name">Agenda Digital</div>
+          </div>
+          <div class="org-desc">Conectividad, alfabetización digital, innovación, gobierno digital y participación ciudadana.</div>
+        </div>
+        <div class="org-card org-ods">
+          <div class="org-card-header">
+            <div class="org-dot"></div>
+            <div class="org-name">ODS 4</div>
+          </div>
+          <div class="org-desc">Educación inclusiva, equitativa y de calidad apoyada por tecnologías pertinentes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="section-card s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div>
+        <div class="section-title">Reflejo en mi contexto educativo</div>
+        <div class="section-question">¿Cómo se expresan esas decisiones mundiales en la I.E. Gabriel Restrepo Moreno, Medellín?</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="context-flow">
+        <div class="flow-item">
+          <div class="flow-icon">🖥️</div>
+          <div class="flow-text"><strong>Digitalización de procesos:</strong> mayor presencia de plataformas virtuales, aulas híbridas y recursos digitales en la institución.</div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon">👩‍🏫</div>
+          <div class="flow-text"><strong>Formación en competencias digitales:</strong> docentes y estudiantes enfrentan la necesidad de desarrollar habilidades críticas para usar las TIC con sentido pedagógico.</div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon">📶</div>
+          <div class="flow-text"><strong>Brechas persistentes:</strong> problemas de conectividad, acceso a dispositivos y acompañamiento familiar en la Comuna 3 limitan el alcance de las políticas globales.</div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-icon">📋</div>
+          <div class="flow-text"><strong>Ajuste curricular:</strong> las instituciones adaptan el currículo, la evaluación y la comunicación escolar a entornos digitales en respuesta a lineamientos del MEN y políticas TIC nacionales.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+  <div class="section-card s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div>
+        <div class="section-title">¿Qué lugar ocupan las TIC?</div>
+        <div class="section-question">Cuatro roles fundamentales en los procesos educativos</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="roles-grid">
+        <div class="role-card r-pedagogico">
+          <div class="role-icon">🧩</div>
+          <div class="role-name">Medio pedagógico</div>
+          <div class="role-desc">Apoyan metodologías activas, colaboración y aprendizaje autónomo.</div>
+        </div>
+        <div class="role-card r-inclusion">
+          <div class="role-icon">🌉</div>
+          <div class="role-name">Puente de inclusión</div>
+          <div class="role-desc">Amplían el acceso si se acompañan de políticas de equidad.</div>
+        </div>
+        <div class="role-card r-objeto">
+          <div class="role-icon">📚</div>
+          <div class="role-name">Objeto de aprendizaje</div>
+          <div class="role-desc">Exigen alfabetización informacional, comunicativa y ética.</div>
+        </div>
+        <div class="role-card r-motor">
+          <div class="role-icon">🚀</div>
+          <div class="role-name">Motor de innovación</div>
+          <div class="role-desc">Permiten nuevas formas de enseñar, aprender y evaluar.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <div class="section-card s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div>
+        <div class="section-title">Desafíos y oportunidades</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <div class="dual-col">
+        <div class="col-desafios">
+          <div class="col-label">⚠ Desafíos</div>
+          <div class="mini-item">Brecha digital y territorial</div>
+          <div class="mini-item">Uso instrumental sin intencionalidad</div>
+          <div class="mini-item">Desigualdad en conectividad</div>
+          <div class="mini-item">Privacidad y seguridad</div>
+          <div class="mini-item">Resistencia al cambio docente</div>
+        </div>
+        <div class="col-oportunidades">
+          <div class="col-label">✦ Oportunidades</div>
+          <div class="mini-item">Acceso abierto a la información</div>
+          <div class="mini-item">Aprendizaje flexible y situado</div>
+          <div class="mini-item">Colaboración entre pares</div>
+          <div class="mini-item">Mayor inclusión educativa</div>
+          <div class="mini-item">Mejora de la calidad educativa</div>
+        </div>
+      </div>
+      <div class="clave-box">
+        Clave: pasar de <strong>"usar tecnología"</strong> a integrarla con <strong>intencionalidad pedagógica</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="reflexion">
+    <div class="reflexion-label">✦ Reflexión final</div>
+    <div class="reflexion-text">
+      Las decisiones mundiales orientan a los gobiernos para convertir las TIC en política pública educativa. En mi contexto, esto se observa en la digitalización de procesos, el uso de plataformas y la exigencia de nuevas competencias. Su verdadero valor aparece cuando contribuyen a una educación más <em>inclusiva, crítica, participativa y contextualizada</em>.
+    </div>
+  </div>
+
+  <div class="fuentes">
+    Fuentes: Unidad 2 · Cumbres Mundiales sobre la Sociedad de la Información (CMSI) · Agenda Digital · UNESCO · ODS 4 · Lecturas sobre políticas TIC e integración educativa
+  </div>
+
+</div>
+</body>
+</html>
